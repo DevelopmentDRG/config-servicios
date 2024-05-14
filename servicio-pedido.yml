@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: servicio-pedido
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pedidos?serverTimezone=UTC
+    username: root
+    password: altia
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+server:
+  port: 8001
+springdoc:
+  packages-to-scan: com.cursomicro.pedido.controller
+  paths-to-match: /**
+eureka:
+  client:
+    service-url:
+        default-zone: http://localhost:8761/eureka
